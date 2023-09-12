@@ -1,3 +1,5 @@
+const { run } = require("jest");
+
 function selectionSort(array) {
 	/*
 	 ** Search through the whole array for the smallest element
@@ -6,19 +8,23 @@ function selectionSort(array) {
 	 ** for the smallest, then swap it with the second element.
 	 ** Continue like this until you have only one element left.
 	 */
-	let smallest = array[0];
-	for(let i=0; i < array.length; i++){
-		var x = array[i];
-		if( x < smallest){
-			smallest = x;
+	const run_number = array.length;
+	let sortedArray =[];
+	for(let i =0; i < run_number; i++){
+		let smallest = array[0];
+		for(let i=0; i < array.length; i++){
+			var x = array[i];
+			if( x < smallest){
+				smallest = x;
+			}
 		}
-
+		sortedArray[i] = smallest;
+		array.splice(array.indexOf(smallest), 1);
 	}
-	console.log(smallest);
-
-	return array;
+	console.log(sortedArray);
+	return sortedArray;
 }
 
 module.exports = selectionSort;
 
-selectionSort([3, 5, 420, 69, 1]);
+selectionSort([1, 17, 44, 96, 127, -8, 9, 88, 1]);
