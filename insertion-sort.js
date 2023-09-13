@@ -6,15 +6,17 @@ function insertionSort(array) {
 	 */
 
 	for (let i = 0; i < array.length; i++) {
-		var element = array[i];
-		for(let x = i+1; x < array.length; x++){
-			if(element > array[x]){
-				var j = array[x];
-				var y = array[x-1];
-				array[x-1] = j;
-				array[x] = y;
+		for(let x = 0; x < array.length; x++){
+			var element = array.length-1-x;
+			console.log(array[element]);
+			if(array[element] < array[element-1]){
+				var j = array[element];
+				var y = array[element-1];
+				array[element] = y;
+				array[element-1] = j;
 			}else{
-				break;
+				console.log("break");
+				//break;
 			}
 		}
 	}
@@ -26,4 +28,4 @@ function insertionSort(array) {
 module.exports = insertionSort;
 
 
-insertionSort([4, 6, 2, 8, 23]);
+insertionSort([10, 6, -8, 489, 203, 0]);

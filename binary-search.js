@@ -1,4 +1,5 @@
 function binarySearch(array, searchTerm) {
+	let x = Math.floor(array.length / 2);
 	
 
 	return null;
